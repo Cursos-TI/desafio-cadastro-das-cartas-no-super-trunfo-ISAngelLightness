@@ -8,51 +8,111 @@
 
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    char codigo_da_cidade[10];
-    char nome_da_cidade[50];
-    int populacao, pontos_turisticos;
-    float area, PIB;
-    float desindade_populacional;
-    float PIB_per_capita;
+    char codigo_da_cidadeA[10], codigo_da_cidadeB[10];
+    char nome_da_cidadeA[50], nome_da_cidadeB[50];
+    long long int populacaoA, populacaoB;
+    int pontos_turisticosA, pontos_turisticosB, pointsA, pointsB;
+    float areaA, PIBA, areaB, PIBB;
+    float desindade_populacionalA, desindade_populacionalB;
+    float PIB_per_capitaA, PIB_per_capitaB;
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     printf("Digite o codigo da cidade: ");
-    scanf("%s", &codigo_da_cidade);
+    scanf("%s", &codigo_da_cidadeA);
 
     printf("Digite o Nome cidade: ");
-    scanf(" %s", &nome_da_cidade);
+    scanf("%s", &nome_da_cidadeA);
 
     printf("Digite o tamanho da população: ");
-    scanf(" %d", &populacao);
+    scanf(" %d", &populacaoA);
 
     printf("Quanto é a area por km Quadrado: ");
-    scanf(" %f", &area);
+    scanf("%f", &areaA);
 
     printf("Quanto é o PIB da cidade: ");
-    scanf(" %f", &PIB);
+    scanf("%f", &PIBA);
 
     printf("Tem Quantos pontos turisticos: ");
-    scanf(" %d", &pontos_turisticos);
+    scanf("%d", &pontos_turisticosA);
 
-    desindade_populacional = populacao / area;
-    PIB_per_capita = PIB / populacao;
+    desindade_populacionalA = (float) populacaoA / areaA;
+    PIB_per_capitaA = PIBA / (float) populacaoA;
+
+    printf("Primeiro Cartão Registrado com sucesso!\n\n");
+    printf("Digite o codigo da cidade: ");
+    scanf("%s", &codigo_da_cidadeB);
+
+    printf("Digite o Nome cidade: ");
+    scanf(" %s", &nome_da_cidadeB);
+
+    printf("Digite o tamanho da população: ");
+    scanf(" %d", &populacaoB);
+
+    printf("Quanto é a area por km Quadrado: ");
+    scanf(" %f", &areaB);
+
+    printf("Quanto é o PIB da cidade: ");
+    scanf(" %f", &PIBB);
+
+    printf("Tem Quantos pontos turisticos: ");
+    scanf(" %d", &pontos_turisticosB);
+
+    desindade_populacionalB = (float) populacaoB / areaB;
+    PIB_per_capitaB = PIBB / (float) populacaoB;
+
+    printf("Segunda Cartão Registrado com sucesso!\n\n");
     
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     // como o código, nome, população, área, PIB, pontos turístico
-    printf("\n\nNova Carta Acrescentada ao DECK com Sucesso!\n");
-    printf("Codigo: %s\n", codigo_da_cidade);
-    printf("Nome: %s\n", nome_da_cidade);
-    printf("População: %d\n", populacao);
-    printf("Área: %f\n", area);
-    printf("PIB: %f\n", PIB);
-    printf("Pontos Turisticos: %d\n", pontos_turisticos);
-    printf("\n\nDensidade Populacional: %.2f\n", desindade_populacional);
-    printf("PIB per capita: %.2f\n", PIB_per_capita);
+    printf("\n\nDados da Primeira Carta!\n");
+    printf("Codigo: %s\n", codigo_da_cidadeA);
+    printf("Nome: %s\n", nome_da_cidadeA);
+    printf("População: %lld\n", populacaoA);
+    printf("Área: %f\n", areaA);
+    printf("PIB: %f\n", PIBA);
+    printf("Pontos Turisticos: %d\n", pontos_turisticosA);
+    printf("\n\nDensidade Populacional: %.2f\n", desindade_populacionalA);
+    printf("PIB per capita: %.2f\n", PIB_per_capitaA);
+
+    printf("\n\nDados da Segunda Carta!\n");
+    printf("Codigo: %s\n", codigo_da_cidadeA);
+    printf("Nome: %s\n", nome_da_cidadeA);
+    printf("População: %lld\n", populacaoA);
+    printf("Área: %f\n", areaA);
+    printf("PIB: %f\n", PIBA);
+    printf("Pontos Turisticos: %d\n", pontos_turisticosA);
+    printf("\n\nDensidade Populacional: %.2f\n", desindade_populacionalA);
+    printf("PIB per capita: %.2f\n", PIB_per_capitaA);
+
+    //GABARITO DO QUE ADICIONA: população, área, PIB, pontos turístico
+    if (populacaoA > populacaoB){
+        pointsA++;
+    }else{pointsB++;}
+    if (areaA > areaB){
+        pointsA++;
+    }else{pointsB++;}
+    if (PIBA > PIBB){
+        pointsA++;
+    }else{pointsB++;}
+    if (pontos_turisticosA > pontos_turisticosB){
+        pointsA++;
+    }else{pointsB++;}
+    if (desindade_populacionalA > desindade_populacionalB){
+        pointsA++;
+    }else{pointsB++;}
+    if (PIB_per_capitaA > PIB_per_capitaB){
+        pointsA++;
+    }else{pointsB++;}
+    if (pointsA > pointsB){
+        printf("o vencedor é a primeira carta!\n");
+    }else if (pointsA < pointsB) {
+        printf("o vencedor é a segunda carta!\n");
+    } else{printf("acabou dando empate!\n");}
 
     return 0;
 }
