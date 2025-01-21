@@ -90,24 +90,8 @@ int main() {
     printf("PIB per capita: %.2f\n", PIB_per_capitaA);
 
     //GABARITO DO QUE ADICIONA: população, área, PIB, pontos turístico
-    if (populacaoA > populacaoB){
-        pointsA++;
-    }else{pointsB++;}
-    if (areaA > areaB){
-        pointsA++;
-    }else{pointsB++;}
-    if (PIBA > PIBB){
-        pointsA++;
-    }else{pointsB++;}
-    if (pontos_turisticosA > pontos_turisticosB){
-        pointsA++;
-    }else{pointsB++;}
-    if (desindade_populacionalA > desindade_populacionalB){
-        pointsA++;
-    }else{pointsB++;}
-    if (PIB_per_capitaA > PIB_per_capitaB){
-        pointsA++;
-    }else{pointsB++;}
+    pointsA = populacaoA+areaA+PIBA+pontos_turisticosA+desindade_populacionalA+PIB_per_capitaA;
+    pointsB = populacaoB+areaB+PIBB+pontos_turisticosB+desindade_populacionalB+PIB_per_capitaB;
     if (pointsA > pointsB){
         printf("o vencedor é a primeira carta!\n");
     }else if (pointsA < pointsB) {
